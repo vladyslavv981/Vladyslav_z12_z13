@@ -4,23 +4,6 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <h1 align="center">
-  .image-rotator {
-  position: relative;
-  width: 100%;
-  max-width: 600px; /* Dostosuj w razie potrzeby */
-  overflow: hidden;
-}
-
-.rotator-slide {
-  display: none;
-  position: absolute;
-  width: 100%;
-}
-
-.rotator-slide img {
-  width: 100%;
-}
-    </h1>
+    <h1 align="center"><div class="image-rotator"><div class="rotator-slide" id="rotator-slide-1"><a href="https://www.darmowylicznik.pl/" title="Przejdź na stronę licznika" target="_blank"><img src="https://www.darmowylicznik.pl/licznik.php?id=148068" alt="Darmowy licznik odwiedzin" style="border:0px;" /></a></div></div></h1>
 </body>
 </html>
