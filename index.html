@@ -41,45 +41,77 @@
             </td>
         </tr>
     </table>
-      <section>
-        <p>Liczba odwiedzin strony: <span id="visit-count">1</span></p>
-        <p>Liczba wpisów w księdze gości: <span id="entry-count">0</span></p>
-    </section>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .entry {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .entry button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .entry button:hover {
+            background-color: #e60000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Księga Gości</h1>
 
+    <form id="guestbook-form">
+        <label for="name">Imię:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="message">Wiadomość:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <br>
+        <button type="submit">Dodaj wpis</button>
+    </form>
 
-    <section>
-        <form id="guestbook-form">
-            <label for="name">Imię:</label>
-            <input type="text" id="name" name="name" required>
-            <br>
-            <label for="message">Wiadomość:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <br>
-            <button type="submit">Dodaj wpis</button>
-        </form>
-        <div id="guestbook">
-
-            <div id="entries"></div>
+    <div id="guestbook">
+        <h2>Wpisy:</h2>
+        <div id="entries">
+            <p>Brak wpisów. Bądź pierwszą osobą, która zostawi wiadomość!</p>
         </div>
-    </section>
-    
-    <script>
+    </div>
 
-        let visitCount = localStorage.getItem('visitCount') || 0;
-        visitCount++;
-        localStorage.setItem('visitCount', visitCount);
-        document.getElementById('visit-count').textContent = visitCount;
-        
-        const entries = JSON.parse(localStorage.getItem('guestbookEntries')) || [];
-        const entryCount = document.getElementById('entry-count');
-        const entriesDiv = document.getElementById('entries');
+    <script>
         const form = document.getElementById('guestbook-form');
+        const entriesDiv = document.getElementById('entries');
+        let entries = JSON.parse(localStorage.getItem('guestbookEntries')) || [];
 
         function updateEntries() {
-            entryCount.textContent = entries.length;
-            entriesDiv.innerHTML = entries.map(entry => `
-                <p><strong>${entry.name}:</strong> ${entry.message}</p>
-            `).join('');
+            entriesDiv.innerHTML = '';
+            if (entries.length === 0) {
+                entriesDiv.innerHTML = '<p>Brak wpisów. Bądź pierwszą osobą, która zostawi wiadomość!</p>';
+                return;
+            }
+            entries.forEach((entry, index) => {
+                const entryDiv = document.createElement('div');
+                entryDiv.className = 'entry';
+                entryDiv.innerHTML = `
+                    <p><strong>${entry.name}:</strong> ${entry.message}</p>
+                    <button onclick="deleteEntry(${index})">Usuń</button>
+                `;
+                entriesDiv.appendChild(entryDiv);
+            });
+        }
+
+        function deleteEntry(index) {
+            entries.splice(index, 1);
+            localStorage.setItem('guestbookEntries', JSON.stringify(entries));
+            updateEntries();
         }
 
         form.addEventListener('submit', (e) => {
