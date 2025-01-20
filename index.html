@@ -7,7 +7,7 @@
     <link rel="icon" href="ikona_strony_Vorokh.png" type="image/x-icon">
 </head>
 <body>
-    <table width="65%" align="center" border="1">
+    <table width="100%" align="center" border="1">
         <tr>
             <td colspan="3" align="center">
                 <iframe scrolling="no" width="900" height="90" name="obszar_stopka" src="logo_Vorokh.html" border="1"></iframe>
@@ -41,89 +41,31 @@
                 <iframe scrolling="no" width="900" height="90" name="obszar_stopka" src="stopka_Vorokh.html" border="0"></iframe>
             </td>
         </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <h1>Księga Gości</h1>
+                <table border="1" width="80%" align="center">
+                    <tr>
+                        <td><strong>Jan Kowalski:</strong><br>To świetna strona! Życzę powodzenia w dalszym rozwijaniu.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agnieszka Nowak:</strong><br>Bardzo ładny design strony. Pozdrawiam serdecznie!</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>Dodaj wpis do księgi gości</h2>
+                            <form action="#">
+                                <label for="name">Twoje imię:</label><br>
+                                <input type="text" id="name" name="name" placeholder="Wpisz swoje imię" required><br><br>
+                                <label for="message">Wiadomość:</label><br>
+                                <textarea id="message" name="message" rows="4" placeholder="Napisz wiadomość" required></textarea><br><br>
+                                <input type="submit" value="Dodaj wpis">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
     </table>
-        <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-        h1 {
-            text-align: center;
-            color: #4CAF50;
-        }
-        .guestbook {
-            width: 60%;
-            margin: 0 auto;
-            padding: 10px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .guest-entry {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        .guest-entry:last-child {
-            border-bottom: none;
-        }
-        .form-container {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        label, textarea, input[type="text"] {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 8px;
-            font-size: 14px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-
-<h1>Księga Gości</h1>
-
-<div class="guestbook">
-    <div class="guest-entry">
-        <strong>Jan Kowalski:</strong><br>
-        To świetna strona! Życzę powodzenia w dalszym rozwijaniu.
-    </div>
-    <div class="guest-entry">
-        <strong>Agnieszka Nowak:</strong><br>
-        Bardzo ładny design strony. Pozdrawiam serdecznie!
-    </div>
-</div>
-
-<div class="form-container">
-    <h2>Dodaj wpis do księgi gości</h2>
-    <form action="#">
-        <label for="name">Twoje imię:</label>
-        <input type="text" id="name" name="name" placeholder="Wpisz swoje imię" required>
-        
-        <label for="message">Wiadomość:</label>
-        <textarea id="message" name="message" rows="4" placeholder="Napisz wiadomość" required></textarea>
-        
-        <input type="submit" value="Dodaj wpis">
-    </form>
-</div>
 </body>
 </html>
