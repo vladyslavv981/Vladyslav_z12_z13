@@ -44,6 +44,45 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .stats {
+            display: inline-block;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .stat-item {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Statystyki Strony</h1>
+    <div class="stats">
+        <div class="stat-item">
+            Liczba odwiedzin strony: <span id="visit-count">0</span>
+        </div>
+    </div>
+
+    <script>
+        // Obsługa licznika odwiedzin strony
+        let visitCount = localStorage.getItem('visitCount') || 0;
+        visitCount++;
+        localStorage.setItem('visitCount', visitCount);
+
+        // Wyświetlenie licznika na stronie
+        document.getElementById('visit-count').textContent = visitCount;
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
             max-width: 600px;
             margin: 20px auto;
         }
