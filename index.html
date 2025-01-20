@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <title>Vorokh_z12_z15</title>
+<html lang="pl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vorokh_z12_z15</title>
+    <link rel="icon" href="ikona_strony_Vorokh.png" type="image/x-icon">
 </head>
 <body>
-<link rel="icon" href="ikona_strony_Vorokh.png" type="image/x-icon">
-     <table width="65%" border="1" align="center">
+    <table width="65%" align="center" border="1">
         <tr>
-            <td colspan="3">
-             <center><iframe scrolling="no" width="900" height="90" name="obszar_stopka" src="logo_Vorokh.html" border="1"></iframe></center>
+            <td colspan="3" align="center">
+                <iframe scrolling="no" width="900" height="90" name="obszar_stopka" src="logo_Vorokh.html" border="1"></iframe>
+            </td>
         </tr>
         <tr>
             <td width="18%" align="center">
                 <ul>
                     <li><a href="https://zse.edu.gdansk.pl/pl" target="obszar_glowny">Strona ZSE</a></li>
                     <li><a href="https://www.kuratorium.gda.pl/" target="obszar_glowny">Kuratorium</a></li>
-                     <li><a href="https://how2html.pl/html-head-body/" target="obszar_glowny">How2html</a></li>
+                    <li><a href="https://how2html.pl/html-head-body/" target="obszar_glowny">How2html</a></li>
                     <li><a href="https://wiadomosci.onet.pl" target="obszar_glowny">Wiadomości</a></li>
                 </ul>
             </td>
             <td align="center">
-    <iframe width="650" height="420" name="obszar_glowny" src="glowny_Vorokh.html" border="0"></iframe>
+                <iframe width="650" height="420" name="obszar_glowny" src="glowny_Vorokh.html" border="0"></iframe>
             </td>
             <td width="18%" align="center">
-              <img src="figury.png" alt="Mapa graficzna" usemap="#mapa_figury">
+                <img src="figury.png" alt="Mapa graficzna" usemap="#mapa_figury">
                 <map name="mapa_figury">
                     <area shape="circle" coords="10,10,60,60" href="123.zip" alt="Koło 1">
                     <area shape="rect" coords="82,117,9,71" href="mailto:mkryniew@ids.gda.pl" alt="Prostokąt 1">
@@ -36,38 +37,15 @@
             </td>
         </tr>
         <tr>
-            <td colspan="3">
-                <center><iframe scrolling="no" width="900" height="90" name="obszar_stopka" src="stopka_Vorokh.html" border="0"></iframe></center>
+            <td colspan="3" align="center">
+                <iframe scrolling="no" width="900" height="90" name="obszar_stopka" src="stopka_Vorokh.html" border="0"></iframe>
             </td>
         </tr>
     </table>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        .stats {
-            display: inline-block;
-            padding: 20px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .stat-item {
-            margin: 10px 0;
-            font-size: 1.2em;
-        }
-    </style>
-</head>
-<body>
-    <h1>Statystyki Strony</h1>
-    <div class="stats">
-        <div class="stat-item">
-            Liczba odwiedzin strony: <span id="visit-count">0</span>
-        </div>
+
+    <h1 align="center">Statystyki Strony</h1>
+    <div align="center">
+        <p>Liczba odwiedzin strony: <span id="visit-count">0</span></p>
     </div>
 
     <script>
@@ -80,45 +58,19 @@
         document.getElementById('visit-count').textContent = visitCount;
     </script>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-        .entry {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-        .entry button {
-            background-color: #ff4d4d;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .entry button:hover {
-            background-color: #e60000;
-        }
-    </style>
-</head>
-<body>
-    <h1>Księga Gości</h1>
-
-    <form id="guestbook-form">
-        <label for="name">Imię:</label>
-        <input type="text" id="name" name="name" required>
-        <br>
-        <label for="message">Wiadomość:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <br>
+    <h1 align="center">Księga Gości</h1>
+    
+    <form id="guestbook-form" align="center">
+        <label for="name">Imię:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="message">Wiadomość:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        
         <button type="submit">Dodaj wpis</button>
     </form>
 
-    <div id="guestbook">
+    <div align="center" id="guestbook">
         <h2>Wpisy:</h2>
         <div id="entries">
             <p>Brak wpisów. Bądź pierwszą osobą, która zostawi wiadomość!</p>
@@ -139,10 +91,9 @@
             entries.forEach((entry, index) => {
                 const entryDiv = document.createElement('div');
                 entryDiv.className = 'entry';
-                entryDiv.innerHTML = `
-                    <p><strong>${entry.name}:</strong> ${entry.message}</p>
-                    <button onclick="deleteEntry(${index})">Usuń</button>
-                `;
+                entryDiv.innerHTML = 
+                    '<p><strong>' + entry.name + ':</strong> ' + entry.message + '</p>' +
+                    '<button onclick="deleteEntry(' + index + ')">Usuń</button>';
                 entriesDiv.appendChild(entryDiv);
             });
         }
